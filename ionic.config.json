@@ -1,5 +1,7 @@
 {
   "name": "banco-do-povo",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

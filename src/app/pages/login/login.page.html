@@ -1,0 +1,26 @@
+<ion-content class="content">
+
+  <div class="content__logo">
+    <ion-img [src]='imgLogo'></ion-img>
+  </div>
+
+  <ion-grid>
+    <ion-card class="card">
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input class="card__input" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input maxlength="6" type="password"></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+      Acessar
+    </ion-button>
+
+    <span>Ainda não é cadastrado? Cadastre-se <a href="/cadastro">aqui</a></span>
+  </ion-grid>
+
+</ion-content>
