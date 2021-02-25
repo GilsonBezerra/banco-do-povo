@@ -1,0 +1,14 @@
+{
+  "user": [
+    {
+      "email": "gilson.bezerra@live.com",
+      "senha": 123456,
+      "id": 1
+    },
+    {
+      "email": "aurea.bezerra@live.com",
+      "senha": 123456,
+      "id": 2
+    }
+  ]
+}

@@ -7,8 +7,8 @@
         <ion-input required formControlName="email" type="text"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Senha <ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required formControlName="senha" type="text"></ion-input>
+        <ion-label position="floating">Senha<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required formControlName="senha" type="password"></ion-input>
       </ion-item>
       <ion-button  expand="block" fill="clear" shape="round" (click)="cadastrar()" [disabled]="registerForm.invalid">
         Cadastrar

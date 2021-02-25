@@ -2,7 +2,8 @@ import { RegisterService } from './../../services/register.service';
 import { User } from './../../models/user';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NavController } from 'ionic-angular';
+import { NavController } from '@ionic/angular';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-cadastro',
@@ -14,27 +15,31 @@ export class CadastroPage implements OnInit {
   public registerForm: FormGroup;
 
   constructor(
-    public formBuild : FormBuilder,
+    public formBuild: FormBuilder,
     private register: RegisterService,
-    private navCtrl: NavController,
-    ) { }
+    private navCtrl: NavController
+  ) { }
 
   ngOnInit() {
-    this.createForm();
+    this.createForm(new User());
   }
 
-  public createForm() {
+  public createForm(user: User) {
     this.registerForm = this.formBuild.group({
-      email: ['', Validators.required],
-      senha: ['', Validators.required]
+      id: [null],
+      email: [user.email, Validators.required],
+      senha: [user.senha, Validators.required]
     });
   }
 
-  public cadastrar(){ 
-    this.register.save(this.registerForm.value);
-    console.log(this.registerForm.value);
-    this.navCtrl.push('/login');
+  public cadastrar() {
+    let data = this.registerForm.value;
+    this.register.save(data);
+    // console.log(data);
     this.registerForm.reset();
+    this.navCtrl.navigateBack('/login');
   }
+
+ 
 
 }
